@@ -83,6 +83,12 @@ object Asserts extends TestSuite{
           e.getMessage.contains("98")
         }
       }
+
+      'applyLocalDefInAssert{
+        def len(str: String) = str.length
+        val a = "scala rocks"
+        assert(len(a) == 11)
+      }
     }
 
     'intercept{
